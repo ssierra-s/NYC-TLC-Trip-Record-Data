@@ -38,6 +38,6 @@ pytest -v     # 38 pruebas, no requieren PostgreSQL levantado
 
 ## Documentación
 
-- **[DOCUMENTACION.md](DOCUMENTACION.md)**: documento maestro — recorrido completo del proyecto, cada librería y por qué se eligió, cada decisión técnica y el guion del video.
+- **DOCUMENTACION.md**: documento maestro — recorrido completo del proyecto, cada librería y por qué se eligió, cada decisión técnica.
 - [DESIGN.md](DESIGN.md): decisiones de arquitectura, diagrama Entidad-Relación, estrategia de migración a streaming.
 - [SETUP.md](SETUP.md): guía paso a paso de instalación, variables de entorno, backup/restore y troubleshooting.
