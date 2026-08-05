@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+
+# Credenciales: solo se versiona .env.example
+.env
+
+# Datos: los Parquet crudos y las descargas incompletas no se versionan
+data/bronze/*.parquet
+data/bronze/*.part
+!data/bronze/.gitkeep
+!data/silver/.gitkeep
+!data/rejected/.gitkeep
+
+# Backups de la base de datos
+*.dump
+
+# Enunciado de la prueba (documento interno de la empresa, no va al repo publico)
+*.docx

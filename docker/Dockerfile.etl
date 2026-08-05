@@ -1,0 +1,21 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+# Sin argumentos, el runner toma los periodos del .env (TAXI_TYPE, START_YEAR,
+# START_MONTH, MONTHS_TO_PROCESS). Se pueden sobreescribir en la invocacion:
+#   docker compose --profile etl run --rm etl python -m scripts.run_pipeline --months 4 5 6
+CMD ["python", "-m", "scripts.run_pipeline"]
